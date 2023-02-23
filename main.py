@@ -159,7 +159,6 @@ class Camera:
 
 camera = Camera()
 
-# Главный Игровой цикл
 running = True
 while running:
     WIDTH, HEIGHT = pygame.display.get_window_size()
@@ -175,9 +174,7 @@ while running:
                 player.move(0, -tile_height)
             if event.key == pygame.K_DOWN:
                 player.move(0, tile_height)
-    # изменяем ракурс камеры
     camera.update(player)
-    # обновляем положение всех спрайтов
     for sprite in all_sprites:
         camera.apply(sprite)
     screen.fill(pygame.Color(0, 0, 0))
